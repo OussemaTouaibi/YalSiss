@@ -1,0 +1,69 @@
+
+#cart {
+  font-size: 1rem;
+  color: white;
+}
+
+
+
+/* Home page */
+#products_heading {
+  margin-top: 1.8rem;
+}
+
+.cardd {
+  height: 100%;
+}
+
+.cardd-title a {
+  color: #2e2e2e;
+}
+
+.cardd-title a:hover {
+  color: #fa9c23;
+  text-decoration: none;
+}
+
+.cardd-body {
+  padding-left: 0;
+}
+
+.cardd-text {
+  font-size: 1.4rem;
+}
+
+#view_btn {
+  background-color: #003060;
+  color: white;
+}
+
+.cardd-img-top {
+  width: 200px;
+  height: 150px;
+}
+
+
+.rating-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+  }
+  
+  .rating-inner::before {
+    content: '\f005 \f005 \f005 \f005 \f005';
+    color: #f8ce0b;
+  }
+
+  .ratings {
+  font-size: 1.2rem;
+  color: #fdcc0d;
+}
+
+#no_of_reviews {
+  font-size: 0.85rem;
+  color: grey;
+  margin-left: 0.5rem;
+}
