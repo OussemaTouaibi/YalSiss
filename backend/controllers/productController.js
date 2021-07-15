@@ -22,7 +22,7 @@ exports.newProduct = catchAsyncErrors(async (req, res, next) => {
 
 exports.getProducts = catchAsyncErrors(async (req, res, next) => {
 
-    const resPerPage = 4;
+    const resPerPage = 8;
     const productCount = await Product.countDocuments()
 
 
@@ -33,12 +33,15 @@ exports.getProducts = catchAsyncErrors(async (req, res, next) => {
 
     const products = await apiFeatures.query;
 
-    res.status(200).json({
-        success : true,
-        count: products.length,
-        productCount,
-        products
-    })
+    setTimeout(() => {
+        res.status(200).json({
+            success : true,
+            productCount,
+            products
+        })
+    },2000)
+
+   
 })
 
 // Get single product details => /api/v1/product/:id

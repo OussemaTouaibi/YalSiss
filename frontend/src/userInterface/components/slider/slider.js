@@ -17,8 +17,11 @@ function ImageSlider() {
     }
     return (
         <>
+        <div className="title">
+            <h2>Capuche</h2>
+           </div>
         <Slider {...settings}>
-           
+        
             <div className="card-wrapper">
                 <div className="card">
                     <div className="card-image">
