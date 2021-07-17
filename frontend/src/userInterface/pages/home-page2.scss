@@ -67,3 +67,17 @@
     content: '\f005 \f005 \f005 \f005 \f005';
     color: #f8ce0b;
   }
+
+  /* Pagination */
+.page-item.active .page-link {
+  background-color: #003060;
+  border-color: #003060;
+}
+
+.page-link {
+  color: #003060;
+}
+
+.page-link:hover {
+  color: #003060;
+}

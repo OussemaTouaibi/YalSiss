@@ -7,14 +7,15 @@ import LogIn from './userInterface/login/login';
 import Signup from './userInterface/signup/signup';
 import Homepage2 from './userInterface/pages/home-page2';
 import Homme from './userInterface/pages/homme';
-
-
+import ProductDetails from './userInterface/components/product/productDetails'
+import { Link } from 'react-router-dom'
 
 function App() {
   return (
     <div className="App">
       <Switch>
         <Route exact path='/' component={HomePage} />
+        <Route  path="/product/:id" component={ProductDetails} />
         <Route  path='/Homme' component={Homme} />
         <Route  path='/Home2' component={Homepage2} />
         <Route  path='/Shop' component={Shop} />

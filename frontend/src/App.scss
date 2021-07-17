@@ -1,8 +1,10 @@
-* {
+
+body {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'Amazon Ember';
+  
 }
 
 // Import only what you need from Bulma
@@ -14,6 +16,7 @@
 .app {
     position: relative;
     min-height : 100vh;
+    text-decoration: none;
 }
 
 .img {
@@ -153,7 +156,9 @@ form {
         outline:none;
         border:none;
     }
-}//card-wrapper
+}
+
+//card-wrapper
 
 .card{
     width:100%;
@@ -187,9 +192,9 @@ form {
             transition:all .9s;
         }
     }
-}//card
+}
 
-
+//card
 
 .card:hover{
     .social-icons li a{

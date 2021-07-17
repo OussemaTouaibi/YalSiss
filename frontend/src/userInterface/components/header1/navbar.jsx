@@ -32,7 +32,7 @@ function Navbar() {
         <nav className='navbar'>
             <Link to ='/'
             className='navbar-logo'>
-                9OWAA3
+                YalSiss
             </Link>
 
             

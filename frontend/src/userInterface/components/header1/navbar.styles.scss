@@ -5,17 +5,20 @@
     justify-content: start;
     align-items: center;
     
-    
   }
  
   
   .navbar-logo {
     color: #fff;
     justify-self: start;
-    margin-left: 20px;
+    margin-bottom: 20px;
     cursor: pointer;
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1.8rem;
+  }
+
+  .navbar-logo:hover {
+    text-decoration: none;
   }
   
   .fa-firstdraft {
@@ -50,6 +53,7 @@
     background-color: #003060;
     border-radius: 4px;
     transition: all 0.2s ease-out;
+    text-decoration: none;
   }
   
   .fa-bars {
