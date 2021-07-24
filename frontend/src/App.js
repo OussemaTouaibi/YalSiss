@@ -3,8 +3,8 @@ import { Switch, Route } from 'react-router-dom';
  import HomePage from './userInterface/pages/home-page';
 import NotFound from './userInterface/pages/notfound-page';
 import Shop from './userInterface/pages/shop';
-import LogIn from './userInterface/login/login';
-import Signup from './userInterface/signup/signup';
+import LogIn from './userInterface/user/login/login';
+import Signup from './userInterface/user/signup/signup';
 import Homepage2 from './userInterface/pages/home-page2';
 import Homme from './userInterface/pages/homme';
 import ProductDetails from './userInterface/components/product/productDetails'

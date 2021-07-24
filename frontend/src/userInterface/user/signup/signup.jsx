@@ -1,17 +1,17 @@
 import React, {Fragment, useState, useEffect} from "react";
 import './signup.scss';
-import Layout from '../components/shared/layout'
-import '../../App.scss';
+import Layout from '../../components/shared/layout'
+import '../../../App.scss';
 import { Formik } from 'formik';
 import { Link, withRouter } from 'react-router-dom';
 
-import Loader from '../components/shared/loader'
-import MetaData from '../components/shared/metaData'
+import Loader from '../../components/shared/loader'
+import MetaData from '../../components/shared/metaData'
 
 import { useAlert } from 'react-alert'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { register, clearErrors } from "../../actions/userActions";
+import { register, clearErrors } from "../../../actions/userActions";
 
 
 
@@ -21,11 +21,10 @@ const Signup = ({ history }) =>{
     const[user, setUser] = useState({
         name: '',
         email: '',
-        phoneNum: '',
         password:''
     })
 
-    const { name, email, phoneNum, password } = user;
+    const { name, email, password } = user;
     const [avatar, setAvatar] = useState('')
     const [avatarPreview, setAvatarPreview ] = useState('/images/default_avatar.jpg')
 
@@ -54,13 +53,33 @@ const Signup = ({ history }) =>{
         const formData = new FormData();
         formData.set('name', name);
         formData.set('email', email);
-        formData.set('phoneNum', phoneNum);
+     
         formData.set('password', password);
         formData.set('avatar', avatar);
 
         dispatch(register(formData))
 
     }
+
+    const onChange = e => {
+        if (e.target.name === 'avatar') {
+
+            const reader = new FileReader();
+
+            reader.onload = () => {
+                if (reader.readyState === 2) {
+                    setAvatarPreview(reader.result)
+                    setAvatar(reader.result)
+                }
+            }
+
+            reader.readAsDataURL(e.target.files[0])
+
+        } else {
+            setUser({ ...user, [e.target.name]: e.target.value })
+        }
+    }
+
 
       
     return (
@@ -73,24 +92,16 @@ const Signup = ({ history }) =>{
            <h1>Sign Up</h1>
            <div className='form-container'>
                <Formik>
-                        <form >
+                        <form   onSubmit={submitHandler} >
                             <div>
                                 <input
                                 type='text'
-                                name='firstname'
-                                placeholder='First Name'
-                                className=' nomad-input'
+                                name='name'
+                                placeholder='Full Name'
+                                className='nomad-input'
+                                value={name}
+                                onChange={onChange} 
                              
-                                />
-                            </div>
-
-                            <div>
-                                <input
-                                type='text'
-                                name='lastname'
-                                placeholder='Last Name'
-                                className=' nomad-input'
-                                
                                 />
                             </div>
 
@@ -100,7 +111,8 @@ const Signup = ({ history }) =>{
                                 name='email'
                                 placeholder='Email'
                                 className='nomad-input' 
-                             
+                                value={email}
+                                onChange={onChange} 
                                 />
                                 
 
@@ -112,25 +124,46 @@ const Signup = ({ history }) =>{
                                 name='password'
                                 placeholder='Password'
                                 className=' nomad-input'
-                             
+                                value={password}
+                                onChange={onChange}
                                 />
 
                             </div>
-
                             <div>
-                                <input
-                                type='Password'
-                                name='passwordConfirm'
-                                placeholder='Password Confirmation'
-                                className='nomad-input'
-                             
-                                />
-                            </div>
-
+                            <div className='form-group'>
+             
+              <div>
+                      <figure className='avatar mr-3 item-rtl'>
+                          <img
+                              src={avatarPreview}
+                              className='rounded-circle'
+                              alt='Avatar Preview'
+                          />
+                      </figure>
+                  </div>
+              <div className='d-flex align-items-center'>
+               
+                  <div className='custom-file'>
+                      <input
+                          type='file'
+                          name='avatar'
+                          className='custom-file-input'
+                          id='customFile'
+                          accept="images/*"
+                          onChange={onChange}
+                      />
+                      <label className='custom-file-label' htmlfor='customFile'>
+                          Choose Avatar
+                      </label>
+                  </div>
+              </div>
+          </div>
+          </div>
                             <div className='submit-btn'>
                                 <button
                                 type='submit'
                                 className='button is-black nomad-btn submit'
+                                disabled={loading ? true : false}
                                 >
                                     Sign Up
                                 </button>

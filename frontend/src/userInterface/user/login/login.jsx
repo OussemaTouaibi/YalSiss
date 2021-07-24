@@ -1,17 +1,17 @@
 import React, {Fragment, useState, useEffect} from "react";
-import Layout from '../components/shared/layout'
+import Layout from '../../components/shared/layout'
 import { Formik } from 'formik';
 import './login.scss';
 import { Link, withRouter} from 'react-router-dom';
 
 
-import Loader from '../components/shared/loader'
-import MetaData from '../components/shared/metaData'
+import Loader from '../../components/shared/loader'
+import MetaData from '../../components/shared/metaData'
 
 import { useAlert } from 'react-alert'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { login, clearErrors } from "../../actions/userActions";
+import { login, clearErrors } from "../../../actions/userActions";
 
 
 
