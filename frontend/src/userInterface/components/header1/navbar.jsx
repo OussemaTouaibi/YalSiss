@@ -76,10 +76,10 @@ function Navbar() {
 
             
             </ul>
-            <Link to="/signup">
+            <Link className="sig" to="/signup">
             <Button>Sign Up</Button>
             </Link>
-            <Link to="/login">
+            <Link className="sig" to="/login">
             <Button>Log In</Button>
             </Link>
         </nav>

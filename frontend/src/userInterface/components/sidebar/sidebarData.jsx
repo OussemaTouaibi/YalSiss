@@ -8,7 +8,7 @@ import * as RiIcons from 'react-icons/ri';
 export const SidebarData = [
   {
     title: 'Vêtements',
-    path: '/overview',
+    path: '/',
     icon: <GIIcons.GiClothes />,
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
@@ -21,12 +21,12 @@ export const SidebarData = [
       },
       {
         title: 'Femmes',
-        path: '/overview/revenue',
+        path: '/',
         icon: <IoIcons.IoIosWoman />
       },
       {
         title: 'Enfants',
-        path: '/overview/revenue',
+        path: '/',
         icon: <FaIcons.FaChild />
       },
       {
@@ -38,7 +38,7 @@ export const SidebarData = [
   },
   {
     title: 'Électroniques',
-    path: '/reports',
+    path: '/',
     icon: <GIIcons.GiSmartphone />,
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
@@ -46,26 +46,26 @@ export const SidebarData = [
     subNav: [
       {
         title: 'téléphones & Tablettes',
-        path: '/reports/reports1',
+        path: '/',
         icon: <FaIcons.FaTabletAlt />,
         cName: 'sub-nav'
       },
       {
         title: 'Ordinateurs & TVs',
-        path: '/reports/reports2',
+        path: '/',
         icon: <FaIcons.FaLaptop />,
         cName: 'sub-nav'
       },
       {
         title: 'Others ...',
-        path: '/reports/reports3',
+        path: '/',
         icon: <FaIcons.FaPlus />
       }
     ]
   },
   {
     title: 'Maison & Bureau',
-    path: '/products',
+    path: '/',
     icon: <GIIcons.GiSofa />,
 
     iconClosed: <RiIcons.RiArrowDownSFill />,
@@ -74,19 +74,19 @@ export const SidebarData = [
     subNav: [
       {
         title: 'Meubles',
-        path: '/messages/message1',
+        path: '/',
         icon: <GIIcons.GiDesk />
       },
       {
         title: 'Décoration',
-        path: '/messages/message2',
+        path: '/',
         icon: <GIIcons.GiColumnVase />
       }
     ]
   },
   {
     title: 'Santé & beauté',
-    path: '/messages',
+    path: '/',
     icon: <GIIcons.GiHealing />,
 
     iconClosed: <RiIcons.RiArrowDownSFill />,
@@ -95,12 +95,12 @@ export const SidebarData = [
     subNav: [
       {
         title: 'Parfums',
-        path: '/messages/message1',
+        path: '/',
         icon: <GIIcons.GiPerfumeBottle />
       },
       {
         title: 'Maquillage',
-        path: '/messages/message2',
+        path: '/',
         icon: <GIIcons.GiLipstick />
       }
     ]

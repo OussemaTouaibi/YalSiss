@@ -16,6 +16,12 @@ const userSchema = new mongoose.Schema({
         unique: true,
         validate: [validator.isEmail, 'Please enter valid email address']
     },
+    phoneNum: {
+        type: Number,
+        required: [true, 'Please enter your phone number'],
+        Length: [8, 'Your phone number must be 8 characters'],
+        default : 0.0
+    },
     password: {
         type: String,
         required: [true, 'Please enter your password'],
@@ -32,6 +38,7 @@ const userSchema = new mongoose.Schema({
             required: true
         },
     },
+   
     role:  {
         type: String,
         default: 'user'

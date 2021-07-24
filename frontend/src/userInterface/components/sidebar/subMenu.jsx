@@ -16,6 +16,7 @@ const SidebarLink = styled(Link)`
     background: #252831;
     border-left: 4px solid #003060;
     cursor: pointer;
+    text-decoration: none;
   }
   
 `;
@@ -37,6 +38,7 @@ const DropdownLink = styled(Link)`
   &:hover {
     background: #003060;
     cursor: pointer;
+    text-decoration: none;
   }
 `;
 
@@ -47,7 +49,7 @@ const SubMenu = ({ item }) => {
 
   return (
     <>
-      <SidebarLink to={item.path} onClick={item.subNav && showSubnav}>
+      <SidebarLink  onClick={item.subNav && showSubnav}>
         <div>
           {item.icon}
           <SidebarLabel>{item.title}</SidebarLabel>

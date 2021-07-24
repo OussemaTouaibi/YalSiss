@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import { SidebarData } from '../sidebar/sidebarData';
 import SubMenu from '../sidebar/subMenu';
 import { IconContext } from 'react-icons/lib';
 import './navbar.scss'
-
+import Search from '../shared/search'
 
 
 const Nav = styled.div`
@@ -74,21 +74,13 @@ const Sidebar = () => {
           </NavIcon>
           
        
-          <div className="input-group">
-          <input
-            type="text"
-            id="search_field"
-            className="form-control"
-            placeholder="Enter Product Name ..."
-          />
-          <div className="input-group-append">
-            <button id="search_btn" className="btn">
-              <i className="fa fa-search" aria-hidden="true"></i>
-            </button>
+          <div className="col-12 col-md-6 mt-2 mt-md-0">
+
+        <Route render={({ history }) => <Search history={history} /> } />
+
+
           </div>
-          </div>
-  
-          
+
       
           <div>
             <ul className="navbarr__links">
