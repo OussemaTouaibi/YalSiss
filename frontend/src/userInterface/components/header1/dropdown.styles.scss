@@ -1,19 +1,19 @@
 .dropdown-menu {
-  background: linear-gradient(90deg,rgb(0,48,96) 0% ,rgb(2, 2, 2) 100%);
-  width: 200px;
+  background:white;
+  width: 210px;
   position: absolute;
-  top: 110px;
+  top: 60px;
   list-style: none;
   text-align: start;
 }
 
 .dropdown-menu li {
-  background: linear-gradient(90deg,rgb(0,48,96) 0% ,rgb(2, 2, 2) 100%);
+  background: white;
   cursor: pointer;
 }
 
 .dropdown-menu li:hover {
-  background: #003060;
+  background:white;
 }
 
 .dropdown-menu.clicked {

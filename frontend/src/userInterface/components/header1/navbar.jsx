@@ -1,10 +1,28 @@
-import React, { useState } from 'react'
+import React, { Fragment, useState } from 'react'
 import { Link } from 'react-router-dom'
 import './navbar.styles.scss'
 import Dropdown from './dropdown'
 import { Button } from '../button/button';
 
-function Navbar() {
+import { useDispatch, useSelector } from 'react-redux'
+import { useAlert } from 'react-alert'
+import { logout } from '../../../actions/userActions'
+
+
+
+const Navbar = ()  => {
+
+const alert = useAlert();
+const dispatch = useDispatch();
+
+const { user, loading } = useSelector(state => state.auth)
+
+const logoutHandler = () => {
+    dispatch(logout());
+    alert.success('Logged out successfully.')
+}
+
+
     const [click, setClick] = useState(false)
     const[dropdown, setDropdown] = useState(false)
 
@@ -28,7 +46,8 @@ function Navbar() {
     };
 
     return(
-    <>
+    <Fragment>
+
         <nav className='navbar'>
             <Link to ='/'
             className='navbar-logo'>
@@ -47,7 +66,7 @@ function Navbar() {
             </li>
 
             <li className='nav-item'>
-            <Link to ='/' className='nav-links' onClick={closeMobileMenu}>
+            <Link to ='/Home2' className='nav-links' onClick={closeMobileMenu}>
             Home2 
             </Link>
             </li>
@@ -74,16 +93,59 @@ function Navbar() {
             </Link>
             </li>
 
-            
             </ul>
-            <Link className="sig" to="/signup">
-            <Button>Sign Up</Button>
-            </Link>
+            {user ? (
+                 <div className="ml-4 dropdown d-inline">
+                 <Link to="#!" 
+                 className="btn dropdown-toggle " 
+                 style={{ textDecoration : "none",
+                 color: '#003060',
+                 marginBottom:'9%'
+
+                   }}
+                 type="button" 
+                 id="dropDownMenuButton"
+                  data-toggle="dropdown" 
+                  aria-haspopup="true" 
+                  aria-expanded="false">
+
+                     <figure className="avatar avatar-nav">
+                         <img
+                             src={user.avatar && user.avatar.url}
+                             alt={user && user.name}
+                             className="rounded-circle"
+                         />
+                     </figure>
+                     <span>{user && user.name}</span>
+                 </Link>
+                 <div className="dropdown-menu" aria-labelledby="dropDownMenuButton">
+
+                 {user && user.role === 'admin' && (
+                                    <Link className="dropdown-item" to="/dashboard">Dashboard</Link>
+                                )}
+                                <Link className="dropdown-item" to="/orders/me">Orders</Link>
+                                <Link className="dropdown-item" to="/me">Profile</Link>
+
+                     <Link className="dropdown-item text-danger" to="/" onClick={logoutHandler}>
+                         Log Out
+                     </Link>
+                 </div>
+                 </div>
+
+            ) : !loading && <>
             <Link className="sig" to="/login">
             <Button>Log In</Button>
             </Link>
+            <Link className="sig" to="/signup">
+            <Button>Sign Up</Button>
+            </Link>
+            </>
+            }
+            
         </nav>
-    </>
+
+    </Fragment>
+    
     );
 }
 

@@ -10,6 +10,10 @@ import './navbar.scss'
 import Search from '../shared/search'
 
 
+import {useSelector } from 'react-redux'
+
+
+
 const Nav = styled.div`
   background: #15171c;
   height: 80px;
@@ -64,6 +68,9 @@ const Sidebar = () => {
 
   const showSidebar = () => setSidebar(!sidebar);
 
+  const { cartItems } = useSelector(state => state.cart)
+
+
   return (
     <>
     
@@ -86,10 +93,10 @@ const Sidebar = () => {
             <ul className="navbarr__links">
               
                 <li>
-                    <Link to="/" className="cart__link">
+                    <Link to="/cart" style= {{ textDecoration : 'none' }} className="cart__link">
                         <i className="fas fa-shopping-cart" ></i>
                     Cart
-                    <span className="cartlogo__badge">0</span>
+                    <span className="cartlogo__badge">{cartItems.length}</span>
                     </Link>
                 </li>
                 
