@@ -77,7 +77,7 @@ const Sidebar = () => {
       <IconContext.Provider value={{ color: '#fff' }}>
         <Nav>
           <NavIcon to='#'>
-            <FaIcons.FaBars onClick={showSidebar} />
+            <FaIcons.FaBars onClick={showSidebar}  />
           </NavIcon>
           
        
@@ -93,7 +93,7 @@ const Sidebar = () => {
             <ul className="navbarr__links">
               
                 <li>
-                    <Link to="/cart" style= {{ textDecoration : 'none' }} className="cart__link">
+                    <Link to="/cart" style= {{ textDecoration : 'none' , marginRight:'0.6rem'}} className="cart__link">
                         <i className="fas fa-shopping-cart" ></i>
                     Panier
                     <span className="cartlogo__badge">{cartItems.length}</span>

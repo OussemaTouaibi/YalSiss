@@ -15,6 +15,8 @@ import Cart from './userInterface/components/cart/cart'
 import Shipping from './userInterface/components/cart/shipping';
 import ConfirmOrder from './userInterface/components/cart/confirmOrder';
 import OrderSuccess from './userInterface/components/cart/orderSuccess';
+import ListOrders from './userInterface/components/order/ListOrders';
+import OrderDetails from './userInterface/components/order/OrderDetails';
 
 import Homepage2 from './userInterface/pages/home-page2';
 import Homme from './userInterface/pages/homme';
@@ -52,10 +54,13 @@ function App() {
         <Route  path='/password/reset/:token' component={NewPassword} exact />
 
         
-        About
+        
         <Route exact path='/cart' component={Cart} exact />
         <ProtectedRoutes exact path='/shipping' component={Shipping} />
         <ProtectedRoutes exact path='/order/confirm' component={ConfirmOrder} />
+        <ProtectedRoutes exact path='/orders/me' component={ListOrders} />
+        <ProtectedRoutes exact path='/order/:id' component={OrderDetails} />
+
         <ProtectedRoutes exact path='/success' component={OrderSuccess} />
 
 

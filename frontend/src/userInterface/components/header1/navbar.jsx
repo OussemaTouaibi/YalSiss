@@ -115,10 +115,9 @@ const logoutHandler = () => {
                                 )}
                                 <Link className="dropdown-item" to="/orders/me">Vos Commandes</Link>
                                 <Link className="dropdown-item" to="/me">Votre Profile</Link>
-
-                     <Link className="dropdown-item text-danger" to="/" onClick={logoutHandler}>
-                         Log Out
-                     </Link>
+                                <Link className="dropdown-item text-danger" to="/" onClick={logoutHandler}>
+                                  Log Out
+                                </Link>
                  </div>
                  </div>
 
