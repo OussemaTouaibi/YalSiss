@@ -44,7 +44,7 @@ const Footer = () => {
                             {/* Logo will be here*/}
                         </Link>
                     </div>
-                    <small className="website-rights">9owaa3 © {year} All rights reserved. </small>
+                    <small className="website-rights">YalSiss © {year} All rights reserved. </small>
                 <div className="social-icons">
                     
                             <Link 

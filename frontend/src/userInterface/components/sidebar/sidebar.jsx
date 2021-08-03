@@ -95,7 +95,7 @@ const Sidebar = () => {
                 <li>
                     <Link to="/cart" style= {{ textDecoration : 'none' }} className="cart__link">
                         <i className="fas fa-shopping-cart" ></i>
-                    Cart
+                    Panier
                     <span className="cartlogo__badge">{cartItems.length}</span>
                     </Link>
                 </li>

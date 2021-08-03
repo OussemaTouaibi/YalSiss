@@ -3,9 +3,12 @@ import { countries } from 'countries-list'
 
 import MetaData from '../shared/metaData'
 
+import CheckoutSteps from './checkoutSteps'
+
 
 import { useDispatch, useSelector } from 'react-redux'
-import { saveShippingInfo } from '../../actions/cartActions'
+import { saveShippingInfo } from '../../../actions/cartActions'
+import Layout from '../shared/layout'
 
 const Shipping = ({ history }) => {
 
@@ -25,15 +28,16 @@ const Shipping = ({ history }) => {
         e.preventDefault()
 
         dispatch(saveShippingInfo({ address, city, phoneNo, postalCode, country }))
-        history.push('/confirm')
+        history.push('/order/confirm')
     }
 
     return (
+        <Layout>
         <Fragment>
 
             <MetaData title={'Shipping Info'} />
 
-       
+            <CheckoutSteps shipping />
 
             <div className="row wrapper">
                 <div className="col-10 col-lg-5">
@@ -48,6 +52,7 @@ const Shipping = ({ history }) => {
                                 value={address}
                                 onChange={(e) => setAddress(e.target.value)}
                                 required
+                                style={{width:'100%'}}
                             />
                         </div>
 
@@ -60,6 +65,7 @@ const Shipping = ({ history }) => {
                                 value={city}
                                 onChange={(e) => setCity(e.target.value)}
                                 required
+                                style={{width:'100%'}}
                             />
                         </div>
 
@@ -107,7 +113,7 @@ const Shipping = ({ history }) => {
                         </div>
 
                         <button
-                            id="shipping_btn"
+                            id="checkout_btn"
                             type="submit"
                             className="btn btn-block py-3"
                         >
@@ -118,6 +124,10 @@ const Shipping = ({ history }) => {
             </div>
 
         </Fragment>
+        <div className="nn">
+
+        </div>
+        </Layout>
     )
 }
 

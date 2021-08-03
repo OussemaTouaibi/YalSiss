@@ -18,7 +18,7 @@ import { login, clearErrors } from "../../../actions/userActions";
 
 
 
-const LogIn = ({ history }) => {
+const LogIn = ({ history, location }) => {
    
 
     const [email, setEmail] = useState('');
@@ -29,11 +29,13 @@ const LogIn = ({ history }) => {
 
     const { isAuthenticated, error, loading } = useSelector(state => state.auth);
 
+    const redirect = location.search ? location.search.split('=')[1] : '/'
+
     useEffect(() => {
 
         if(isAuthenticated) {
 
-            history.push('/')
+            history.push(redirect)
           
         }
 

@@ -61,35 +61,25 @@ const logoutHandler = () => {
             <ul className={click ? 'nav-menu active' : 'nav-menu'} >
             <li className='nav-item'>
             <Link to ='/' className='nav-links' onClick={closeMobileMenu}>
-            Home
+            Accueil
             </Link>
             </li>
 
             <li className='nav-item'>
             <Link to ='/Home2' className='nav-links' onClick={closeMobileMenu}>
-            Home2 
-            </Link>
-            </li>
-
-            <li className='nav-item'
-            onMouseEnter={onMouseEnter}
-            onMouseLeave={onMouseLeave}
-            >
-            <Link to ='/' className='nav-links' onClick={closeMobileMenu} >
-            Home3 <i className='fas fa-caret-down' />
-            </Link>
-            {dropdown && <Dropdown />}
-            </li>
-
-            <li className='nav-item'>
-            <Link to ='/' className='nav-links' onClick={closeMobileMenu}>
-            Contact Us
+            Tous Nos Produits 
             </Link>
             </li>
 
             <li className='nav-item'>
             <Link to ='/' className='nav-links' onClick={closeMobileMenu}>
-            About
+            Contact
+            </Link>
+            </li>
+
+            <li className='nav-item'>
+            <Link to ='/about' className='nav-links' onClick={closeMobileMenu}>
+            A Propos
             </Link>
             </li>
 
@@ -123,8 +113,8 @@ const logoutHandler = () => {
                  {user && user.role === 'admin' && (
                                     <Link className="dropdown-item" to="/dashboard">Dashboard</Link>
                                 )}
-                                <Link className="dropdown-item" to="/orders/me">Orders</Link>
-                                <Link className="dropdown-item" to="/me">Profile</Link>
+                                <Link className="dropdown-item" to="/orders/me">Vos Commandes</Link>
+                                <Link className="dropdown-item" to="/me">Votre Profile</Link>
 
                      <Link className="dropdown-item text-danger" to="/" onClick={logoutHandler}>
                          Log Out
@@ -134,10 +124,10 @@ const logoutHandler = () => {
 
             ) : !loading && <>
             <Link className="sig" to="/login">
-            <Button>Log In</Button>
+            <Button>Connexion</Button>
             </Link>
             <Link className="sig" to="/signup">
-            <Button>Sign Up</Button>
+            <Button>Créez un compte</Button>
             </Link>
             </>
             }

@@ -45,7 +45,10 @@ const Cart = ({ history }) => {
         <Layout>
         <Fragment>
             <MetaData title={'Your Cart'} />
-            {cartItems.length === 0 ? <><div className="nnn"></div><h2 className="mama">Your Cart is Empty</h2>  </>: (
+            {cartItems.length === 0 ? <>
+            <div className="nnn"></div>
+            <img className="my-5 img-fluid d-block mx-auto" src="/images/empty.jpg" alt="Empty" width="80" height="80" />
+            <h2 className="mama">Votre panier est vide.</h2>  </>: (
                 <Fragment>
                     <h2 className="mt-5">Your Cart: <b>{cartItems.length} items</b></h2>
 
