@@ -60,7 +60,7 @@ const LogIn = ({ history, location }) => {
                         <MetaData title={'login'} />
                         <div className='card'>
              <div className='log-in'>
-            <h1>Log In</h1>
+            <h1>Se connecter</h1>
             <div className='container'>
                 <Formik >
                
@@ -70,7 +70,7 @@ const LogIn = ({ history, location }) => {
                                     id='email_field'
                                     type='email'
                                     name='email'
-                                    placeholder='Email'
+                                    placeholder='E-mail'
                                     className="nomad-input"  
                                     value={email}          
                                     onChange={(e) => setEmail(e.target.value)}                        
@@ -82,7 +82,7 @@ const LogIn = ({ history, location }) => {
                                     id='password_field'
                                     type='password'
                                     name='password'
-                                    placeholder='Password'
+                                    placeholder='Mot de passe'
                                     className="nomad-input"
                                     value={password}          
                                     onChange={(e) => setPassword(e.target.value)}   
@@ -97,7 +97,7 @@ const LogIn = ({ history, location }) => {
                                     className='button is-black nomad-btn submit'
 
                                     >
-                                        Log In
+                                        Se connecter
                                     </button>
                                 </div>
 
@@ -106,10 +106,10 @@ const LogIn = ({ history, location }) => {
 
                                 <div>
                                   <Link to='/password/forgot'  className='disc'>
-                                        Forgot Password ?
+                                        Mot de passe oublié ?
                                   </Link>
                                   <Link to='signup'  className='disc'>
-                                        Need an account? Sign Up
+                                  Besoin d'un compte ? 
                                   </Link>
                                 </div>
                             </form>

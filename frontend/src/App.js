@@ -5,32 +5,44 @@ import { Switch, Route } from 'react-router-dom';
 
 
 
- import HomePage from './userInterface/pages/home-page';
-import NotFound from './userInterface/pages/notfound-page';
-import LogIn from './userInterface/user/login/login';
-import Signup from './userInterface/user/signup/signup';
-import About from './userInterface/pages/aboutUs';
 
+import Homme from './userInterface/pages/homme';
+import HomePage from './userInterface/pages/home-page';
+import About from './userInterface/pages/aboutUs';
+import NotFound from './userInterface/pages/notfound-page';
+import Homepage2 from './userInterface/pages/home-page2';
+
+
+// Cart Imports
 import Cart from './userInterface/components/cart/cart'
 import Shipping from './userInterface/components/cart/shipping';
 import ConfirmOrder from './userInterface/components/cart/confirmOrder';
 import OrderSuccess from './userInterface/components/cart/orderSuccess';
+
+// Order Imports
 import ListOrders from './userInterface/components/order/ListOrders';
 import OrderDetails from './userInterface/components/order/OrderDetails';
 
-import Homepage2 from './userInterface/pages/home-page2';
-import Homme from './userInterface/pages/homme';
+
+
+// Auth or Users Imports
+import LogIn from './userInterface/user/login/login';
+import Signup from './userInterface/user/signup/signup';
+import UpdatePassword from './userInterface/user/updatePassword/updatePassword'
+import ForgotPassword from './userInterface/user/forgotPassword/forgotPassword'
+import NewPassword from './userInterface/user/newPassword/newPassword'
 import Profile from './userInterface/user/profile/profile';
 import ProductDetails from './userInterface/components/product/productDetails'
 import UpdateProfile from './userInterface/user/updateProfile/updateProfile'
 
-import UpdatePassword from './userInterface/user/updatePassword/updatePassword'
-import ForgotPassword from './userInterface/user/forgotPassword/forgotPassword'
-import NewPassword from './userInterface/user/newPassword/newPassword'
+// Admin Imports
+import Dashboard from './adminInterface/component/dashboard/dashboard';
+import ProductsList from './adminInterface/component/product/productList';
 
 import ProtectedRoutes from './userInterface/route/protectedRoutes';
 import { loadUser } from './actions/userActions'
 import store from './store'
+
 
 
 
@@ -68,6 +80,13 @@ function App() {
         <ProtectedRoutes  path='/me' component={Profile} exact />
         <ProtectedRoutes  path='/me/update' component={UpdateProfile} exact />
         <ProtectedRoutes  path='/password/update' component={UpdatePassword} exact />
+
+        
+        <ProtectedRoutes  path='/dashboard' isAdmin={true} component={Dashboard} exact />
+        <ProtectedRoutes  path='/admin/products' isAdmin={true} component={ProductsList} exact />
+
+
+
 
         <Route  path='/search/:keyword' component={Homepage2} />
         <Route  path='/Home2' component={Homepage2} />

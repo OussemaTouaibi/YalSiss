@@ -89,7 +89,7 @@ const Signup = ({ history }) =>{
                     <Fragment>
                         <MetaData title={'register'} />
        <div className='sign-up'>
-           <h1>Sign Up</h1>
+           <h1>Créer un compte</h1>
            <div className='form-container'>
                <Formik>
                         <form   onSubmit={submitHandler} >
@@ -97,7 +97,7 @@ const Signup = ({ history }) =>{
                                 <input
                                 type='text'
                                 name='name'
-                                placeholder='Full Name'
+                                placeholder='Nom & Prénom'
                                 className='nomad-input'
                                 value={name}
                                 onChange={onChange} 
@@ -109,7 +109,7 @@ const Signup = ({ history }) =>{
                                 <input
                                 type='email'
                                 name='email'
-                                placeholder='Email'
+                                placeholder='Adresse e-mail'
                                 className='nomad-input' 
                                 value={email}
                                 onChange={onChange} 
@@ -122,7 +122,7 @@ const Signup = ({ history }) =>{
                                 <input
                                 type='password'
                                 name='password'
-                                placeholder='Password'
+                                placeholder='Mot de passe'
                                 className=' nomad-input'
                                 value={password}
                                 onChange={onChange}
@@ -174,7 +174,7 @@ const Signup = ({ history }) =>{
 
                             <div>
                                 <Link to='login'  className='disc'>
-                                    Already have an account? Log In
+                                Vous possédez déjà un compte ? CONNECTEZ-VOUS
                                 </Link> 
                             </div>
                             

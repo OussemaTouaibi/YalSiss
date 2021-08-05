@@ -13,6 +13,7 @@
     "countries-list": "^2.6.1",
     "formik": "^2.2.9",
     "mdbreact": "^4.17.0",
+    "postcss": "^8.3.6",
     "rc-slider": "^9.7.2",
     "react": "^17.0.2",
     "react-alert": "^7.0.3",

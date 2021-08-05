@@ -90,8 +90,7 @@ const logoutHandler = () => {
                  className="btn dropdown-toggle " 
                  style={{ textDecoration : "none",
                  color: '#003060',
-                 marginBottom:'9%'
-
+                 marginBottom:'12%',
                    }}
                  type="button" 
                  id="dropDownMenuButton"
@@ -108,8 +107,8 @@ const logoutHandler = () => {
                      </figure>
                      <span>{user && user.name}</span>
                  </Link>
-                 <div className="dropdown-menu" aria-labelledby="dropDownMenuButton">
-
+                 <div className="dropdown-menu"  aria-labelledby="dropDownMenuButton">
+                     
                  {user && user.role === 'admin' && (
                                     <Link className="dropdown-item" to="/dashboard">Dashboard</Link>
                                 )}
