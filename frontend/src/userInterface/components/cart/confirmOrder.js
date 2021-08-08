@@ -29,7 +29,9 @@ const ConfirmOrder = ({ history }) => {
 
     const order = {
         orderItems: cartItems,
-        shippingInfo
+        shippingInfo,
+       
+
     }
 
     const orderInfo = JSON.parse(sessionStorage.getItem('orderInfo'));
@@ -40,16 +42,27 @@ const ConfirmOrder = ({ history }) => {
         order.totalPrice = orderInfo.totalPrice
     }
 
+   
+
 
 
     // Calculate Order Prices
     const itemsPrice = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0)
     const shippingPrice = 7
-    const totalPrice = (itemsPrice + shippingPrice).toFixed(2)
+    const totalPrice = (itemsPrice + shippingPrice).toFixed(2) 
 
-    const Success = () => {
+    
+
+    const processToPayment = () => {
+        const data = {
+            itemsPrice: itemsPrice.toFixed(2),
+            shippingPrice,
+            totalPrice
+        }
+
+        sessionStorage.setItem('orderInfo', JSON.stringify(data))
+       
         dispatch(createOrder(order))
-
         history.push('/success')
     }
 
@@ -115,7 +128,7 @@ const ConfirmOrder = ({ history }) => {
                         <button 
                         id="checkout_btn" 
                         className="btn btn-primary btn-block"
-                         onClick={Success}
+                         onClick={processToPayment}
                          type="submit"
                          >Confirm
                          

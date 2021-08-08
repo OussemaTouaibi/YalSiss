@@ -38,6 +38,13 @@ import UpdateProfile from './userInterface/user/updateProfile/updateProfile'
 // Admin Imports
 import Dashboard from './adminInterface/component/dashboard/dashboard';
 import ProductsList from './adminInterface/component/product/productList';
+import NewProduct from './adminInterface/component/product/newProduct';
+import UpdateProduct from './adminInterface/component/product/updateProduct';
+import OrdersList from './adminInterface/component/order/orderList';
+import ProcessOrder from './adminInterface/component/order/processOrder';
+import UsersList from './adminInterface/component/user/userList';
+import UpdateUser from './adminInterface/component/user/updateUser';
+import ProductReviews from './adminInterface/component/review/productReviews';
 
 import ProtectedRoutes from './userInterface/route/protectedRoutes';
 import { loadUser } from './actions/userActions'
@@ -84,6 +91,20 @@ function App() {
         
         <ProtectedRoutes  path='/dashboard' isAdmin={true} component={Dashboard} exact />
         <ProtectedRoutes  path='/admin/products' isAdmin={true} component={ProductsList} exact />
+        <ProtectedRoutes  path='/admin/product' isAdmin={true} component={NewProduct} exact />
+        <ProtectedRoutes  path='/admin/product/:id' isAdmin={true} component={UpdateProduct} exact />
+        <ProtectedRoutes  path='/admin/orders' isAdmin={true} component={OrdersList} exact />
+        <ProtectedRoutes  path='/admin/order/:id' isAdmin={true} component={ProcessOrder} exact />
+        <ProtectedRoutes  path='/admin/users' isAdmin={true} component={UsersList} exact />
+        <ProtectedRoutes  path='/admin/user/:id' isAdmin={true} component={UpdateUser} exact />
+        <ProtectedRoutes  path='/admin/reviews' isAdmin={true} component={ProductReviews} exact />
+
+
+
+
+
+
+
 
 
 
