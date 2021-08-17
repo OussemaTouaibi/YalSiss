@@ -45,6 +45,10 @@ import ProcessOrder from './adminInterface/component/order/processOrder';
 import UsersList from './adminInterface/component/user/userList';
 import UpdateUser from './adminInterface/component/user/updateUser';
 import ProductReviews from './adminInterface/component/review/productReviews';
+import CategoryCreate from './adminInterface/component/category/categoryCreate';
+import CategoryList from './adminInterface/component/category/categoryList';
+import SubCreate from './adminInterface/component/sub/CreateSub';
+import ListSub from './adminInterface/component/sub/ListSub';
 
 import ProtectedRoutes from './userInterface/route/protectedRoutes';
 import { loadUser } from './actions/userActions'
@@ -98,6 +102,15 @@ function App() {
         <ProtectedRoutes  path='/admin/users' isAdmin={true} component={UsersList} exact />
         <ProtectedRoutes  path='/admin/user/:id' isAdmin={true} component={UpdateUser} exact />
         <ProtectedRoutes  path='/admin/reviews' isAdmin={true} component={ProductReviews} exact />
+        <ProtectedRoutes  path='/admin/category' isAdmin={true} component={CategoryCreate} exact />
+        <ProtectedRoutes  path='/admin/category' isAdmin={true} component={CategoryCreate} exact />
+        <ProtectedRoutes  path='/admin/categories' isAdmin={true} component={CategoryList} exact />
+        <ProtectedRoutes  path='/admin/sub' isAdmin={true} component={SubCreate} exact />
+        <ProtectedRoutes  path='/admin/subs' isAdmin={true} component={ListSub} exact />
+
+
+
+
 
 
 

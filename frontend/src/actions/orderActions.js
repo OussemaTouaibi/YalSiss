@@ -137,6 +137,32 @@ export const updateOrder = (id, orderData) => async (dispatch) => {
         })
     }
 }
+// update order2
+export const updatePay = (id, orderData) => async (dispatch) => {
+    try {
+
+        dispatch({ type: UPDATE_ORDER_REQUEST })
+
+        const config = {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }
+
+        const { data } = await axios.put(`/api/v1/admin/order/${id}`, orderData, config)
+
+        dispatch({
+            type: UPDATE_ORDER_SUCCESS,
+            payload: data.success
+        })
+
+    } catch (error) {
+        dispatch({
+            type: UPDATE_ORDER_FAIL,
+            payload: error.response.data.message
+        })
+    }
+}
 
 // Delete order
 export const deleteOrder = (id) => async (dispatch) => {

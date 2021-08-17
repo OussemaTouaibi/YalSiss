@@ -8,7 +8,7 @@ import Sidebar from '../sideBar/sideBar'
 
 import { useAlert } from 'react-alert'
 import { useDispatch, useSelector } from 'react-redux'
-import { getOrderDetails, updateOrder, clearErrors } from '../../../actions/orderActions'
+import { getOrderDetails, updateOrder, updatePay, clearErrors } from '../../../actions/orderActions'
 import { UPDATE_ORDER_RESET } from '../../../constants/orderConstants'
 
 import '../product/productList.scss'
@@ -46,25 +46,21 @@ const ProcessOrder = ({ match }) => {
     }, [dispatch, alert, error, isUpdated, orderId])
 
 
-    const updateOrderHandler = (id) => {
+    const submitHandler = (id) => {
+
 
         const formData = new FormData();
         formData.set('status', status);
-
-        dispatch(updateOrder(id, formData))
-    }
-    const updatepayHandler = (id) => {
-
-        const formData = new FormData();
         formData.set('pay', pay);
 
         dispatch(updateOrder(id, formData))
     }
+
     
     
 
     const shippingDetails = shippingInfo && `${shippingInfo.address}, ${shippingInfo.city}, ${shippingInfo.postalCode}, ${shippingInfo.country}`
-    const isPaid = paymentInfo && paymentInfo.status === 'succeeded' ? true : false
+    const isPaid = paymentInfo && paymentInfo.status 
 
     return (
         <Layout>
@@ -92,7 +88,7 @@ const ProcessOrder = ({ match }) => {
                                     <hr />
 
                                     <h4 className="my-4">Payment</h4>
-                                    <p className="greenColor"><b>PAID(when it will be delivered)</b></p>
+                                    <p className={isPaid ? "greenColor" : "redColor"}><b>{isPaid ? "PAID" : "NOT PAID"}</b></p>
 
                                     <h4 className="my-4">Stripe ID</h4>
                                     <p><b>{paymentInfo && paymentInfo.id}</b></p>
@@ -146,7 +142,21 @@ const ProcessOrder = ({ match }) => {
                                         </select>
                                     </div>
 
-                                    <button className="btn btn-primary btn-block" onClick={() => updateOrderHandler(order._id)}>
+                                    
+                                    <div className="form-group">
+                                        <select
+                                            className="form-control"
+                                            name='pay'
+                                            value={pay}
+                                            onChange={(e) => setPay(e.target.value)}
+                                        >
+                                            <option value="NOT PAID">Not Paid</option>
+                                            <option value="PAID">is Paid</option>
+                                           
+                                        </select>
+                                    </div>
+
+                                    <button className="btn btn-primary btn-block" onClick={() => submitHandler(order._id)}>
                                         Update Status
                                     </button>
                                 </div>

@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const { ObjectId } = mongoose.Schema;
 
 const productSchema = new mongoose.Schema({
     name: {
@@ -53,7 +54,9 @@ const productSchema = new mongoose.Schema({
             ],
             message: 'Please select correct category for product'
         }
+
     },
+
     seller: {
         type: String,
         required: [true, 'Please enter product seller']

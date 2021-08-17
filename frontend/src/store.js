@@ -6,7 +6,8 @@ import { productsReducer, newProductReducer, productReducer, productDetailsReduc
 import { authReducer, userReducer, forgotPasswordReducer, allUsersReducer, userDetailsReducer  } from './reducers/userReducers';
 import { cartReducer } from './reducers/cartReducers'
 import { newOrderReducer, myOrdersReducer, orderDetailsReducer, allOrdersReducer, orderReducer  } from './reducers/orderReducers'
-
+import { createCategoryReducer, allCategoriesReducer, categoryReducer } from './reducers/categoryReducers'
+import {createSubReducer, allSubsReducer, subReducer } from './reducers/subReducers'
 
 const reducer = combineReducers({
    products: productsReducer,
@@ -26,7 +27,13 @@ const reducer = combineReducers({
     allOrders: allOrdersReducer,
     orderDetails: orderDetailsReducer,
     order: orderReducer,
-    newReview: newReviewReducer
+    newReview: newReviewReducer,
+    createCategory : createCategoryReducer,
+    allCategories: allCategoriesReducer,
+    category : categoryReducer,
+    createSub: createSubReducer,
+    allSubs: allSubsReducer,
+    sub : subReducer
 })
 
 

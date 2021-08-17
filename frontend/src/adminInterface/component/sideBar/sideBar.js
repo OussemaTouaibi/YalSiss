@@ -42,6 +42,27 @@ const Sidebar = () => {
                         <Link to="/admin/reviews"><i className="fa fa-star"></i> Reviews</Link>
                     </li>
                     </div>
+
+                    <div className='l'>
+                    <li>
+                        <a href="#categorySubmenu" data-toggle="collapse" aria-expanded="false" className="dropdown-toggle">
+                            <i className="fa fa-list-alt"></i> Category</a>
+                        <ul className="collapse list-unstyled" id="categorySubmenu">
+                            <li>
+                                <Link to="/admin/categories"><i className="fa fa-clipboard"></i> All Categories</Link>
+                            </li>
+                            <li>
+                                <Link to="/admin/subs"><i className="fa fa-clipboard"></i> All Subcategories</Link>
+                            </li>
+                            <li>
+                                <Link to="/admin/category"><i className="fa fa-plus"></i> Create Category</Link>
+                            </li>
+                            <li>
+                                <Link to="/admin/sub"><i className="fa fa-plus"></i> Create Sub</Link>
+                            </li>
+                        </ul>
+                    </li>
+                    </div>
                 </ul>
             </nav>
         </div>

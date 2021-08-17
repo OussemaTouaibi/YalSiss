@@ -142,6 +142,7 @@ const UpdateProduct = ({ match, history }) => {
                                         type="text"
                                         id="name_field"
                                         className="form-control"
+                                        style={{width:'100%'}}
                                         value={name}
                                         onChange={(e) => setName(e.target.value)}
                                     />
@@ -153,6 +154,7 @@ const UpdateProduct = ({ match, history }) => {
                                         type="text"
                                         id="price_field"
                                         className="form-control"
+                                        style={{width:'100%'}}
                                         value={price}
                                         onChange={(e) => setPrice(e.target.value)}
                                     />
@@ -190,6 +192,7 @@ const UpdateProduct = ({ match, history }) => {
                                         id="seller_field"
                                         className="form-control"
                                         value={seller}
+                                        style={{width:'100%'}}
                                         onChange={(e) => setSeller(e.target.value)}
                                     />
                                 </div>
