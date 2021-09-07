@@ -254,3 +254,8 @@ export const clearErrors = () => async (dispatch) => {
         type: CLEAR_ERRORS
     })
 }
+
+
+export const list = async () =>
+
+await axios.get('/api/v1/category/:slug');

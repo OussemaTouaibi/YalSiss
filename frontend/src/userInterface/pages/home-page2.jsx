@@ -15,7 +15,7 @@ import { getProducts } from '../../actions/productActions'
 import './home-page2.scss'
 
 const { createSliderWithTooltip } = Slider;
-const Range                       = createSliderWithTooltip(Slider.Range)
+const Range  = createSliderWithTooltip(Slider.Range)
 
 const Homepage2 = ({ match }) => {
 
@@ -26,7 +26,7 @@ const Homepage2 = ({ match }) => {
 
 
   const categories = [
-    'Electronics',
+    'vetement-homme',
     'Cameras',
     'Laptop',
     'Accessories',

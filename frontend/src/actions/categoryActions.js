@@ -6,6 +6,11 @@ import {
     CREATE_CATEGORY_RESET,
     CREATE_CATEGORY_FAIL,
 
+    DISPLAY_CATEGORYSUBS_REQUEST,
+    DISPLAY_CATEGORYSUBS_SUCCESS,
+    DISPLAY_CATEGORYSUBS_RESET,
+    DISPLAY_CATEGORYSUBS_FAIL,
+
     ONE_CATEGORIES_REQUEST,
     ONE_CATEGORIES_SUCCESS,
     ONE_CATEGORIES_FAIL,
@@ -75,6 +80,10 @@ export const deleteCategory = (id) => async (dispatch) => {
 }
 
 
+export const getCategories = async () =>
+await axios.get('/api/v1/categories')
+
+
 
 export const allCategories = () => async (dispatch) => {
     try {
@@ -125,6 +134,8 @@ export const UpdateCategory = (slug, categoryData) => async (dispatch) => {
 }
 
 
+export const getCategoryy = async (slug) =>
+  await axios.get(`/api/v1/category/${slug}`);
 
 export const getCategory = (slug) => async (dispatch) => {
     try {
@@ -135,7 +146,8 @@ export const getCategory = (slug) => async (dispatch) => {
 
         dispatch({
             type: ONE_CATEGORIES_SUCCESS,
-            payload: data.category
+            payload: data.category,
+          
         })
 
     } catch (error) {
@@ -147,6 +159,16 @@ export const getCategory = (slug) => async (dispatch) => {
 }
 
 
+
+export const getCategorySubs = async (_id) =>
+
+await axios.get(`/api/v1/category/subs/${_id}`);
+
+
+
+export const getProductsByCategory = async (slug) =>
+
+await axios.get(`/api/v1/category/${slug}`);
 
 
 

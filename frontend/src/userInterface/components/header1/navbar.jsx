@@ -49,10 +49,10 @@ const logoutHandler = () => {
     <Fragment>
 
         <nav className='navbar'>
-            <Link to ='/'
+            <div to ='/'
             className='navbar-logo'>
-                YalSiss
-            </Link>
+              YalSiss
+            </div>
 
             
             <div className='menu-icon' onClick={handleClick}>
@@ -72,7 +72,7 @@ const logoutHandler = () => {
             </li>
 
             <li className='nav-item'>
-            <Link to ='/' className='nav-links' onClick={closeMobileMenu}>
+            <Link to ='/contact' className='nav-links' onClick={closeMobileMenu}>
             Contact
             </Link>
             </li>

@@ -6,12 +6,14 @@ import { Switch, Route } from 'react-router-dom';
 
 
 
-import Homme from './userInterface/pages/homme';
+import Homme from './userInterface/pages/categorypages/homme';
 import HomePage from './userInterface/pages/home-page';
 import About from './userInterface/pages/aboutUs';
 import NotFound from './userInterface/pages/notfound-page';
 import Homepage2 from './userInterface/pages/home-page2';
-
+import ContactPage from './userInterface/pages/ContactPage';
+import Femme from './userInterface/pages/categorypages/femme'
+import Enfant from './userInterface/pages/categorypages/enfant';
 
 // Cart Imports
 import Cart from './userInterface/components/cart/cart'
@@ -71,10 +73,19 @@ function App() {
       <Switch>
         <Route exact path='/' component={HomePage} />
         <Route exact path='/about' component={About} />
+        <Route exact path='/contact' component={ContactPage} />
+
         <Route  path="/product/:id" component={ProductDetails} />
-        <Route  path='/Homme' component={Homme} />
+       
         <Route  path='/password/forgot' component={ForgotPassword}  />
         <Route  path='/password/reset/:token' component={NewPassword} exact />
+        <Route  path='/category/vetements-homme' component={Homme} exact />
+        <Route  path='/category/vetements-femme' component={Femme} exact />
+        <Route  path='/category/vetements-enfant' component={Enfant} exact />
+
+
+        
+
 
         
         

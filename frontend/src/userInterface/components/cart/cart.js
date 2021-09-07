@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState} from 'react'
 import { Link } from 'react-router-dom'
 
 import MetaData from '../../components/shared/metaData'
@@ -8,8 +8,18 @@ import './cart.scss'
 import { useAlert } from 'react-alert'
 import { useDispatch, useSelector } from 'react-redux'
 import { addItemToCart, removeItemFromCart } from '../../../actions/cartActions'
+import { getProductDetails, clearErrors } from '../../../actions/productActions'
+
+
 
 const Cart = ({ history }) => {
+
+    const color = ["Black", "Brown", "Silver", "White", "Blue"]
+
+    const [colors, setColors] = useState([]);
+    const [size, setSize] = useState('');
+
+    const { loading, error, product } = useSelector(state => state.productDetails)
 
     const dispatch = useDispatch();
 
@@ -41,6 +51,8 @@ const Cart = ({ history }) => {
         history.push('/login?redirect=shipping')
     }
 
+
+
     return (
         <Layout>
         <Fragment>
@@ -70,9 +82,42 @@ const Cart = ({ history }) => {
                                             </div>
 
 
-                                            <div className="col-4 col-lg-2 mt-4 mt-lg-0">
+                                            <div className="col-4 col-lg-3 mt-4 mt-lg-0">
                                                 <p id="card_item_price">{item.price}DT</p>
                                             </div>
+                                           
+                    <div className="col-4 col-lg-2 mt-4 mt-lg-0" >
+
+                    <select
+            onChange={(e)=>e.target.value}
+            name="color"
+            className="form-control"
+          >
+            {product.color ? (
+              <option value={product.color}>{product.color}</option>
+            ) : (
+              <option>Size</option>
+            )}
+            {color
+              .filter((c) => c !== product.color)
+              .map((c) => (
+                <option key={c} value={c}>
+                  {c}
+                </option>
+              ))}
+          </select>
+           
+                                </div>
+
+                                    
+                                <div className="col-2 col-lg-6 mt-4 mt-lg-6" >
+                                    <input 
+                                   
+                                    placeholder="Size XL or 40 .."
+                                    ></input>
+                                </div>
+                        
+                        
 
                                             <div className="col-4 col-lg-3 mt-4 mt-lg-0">
                                                 <div className="stockCounter d-inline">

@@ -6,6 +6,12 @@ import dataSlider from './SliderData'
 export default function Slider() {
 
     const [slideIndex, setSlideIndex] = useState(1)
+    
+
+    
+    
+
+
 
     const nextSlide = () => {
         if(slideIndex !== dataSlider.length){
@@ -14,7 +20,10 @@ export default function Slider() {
         else if (slideIndex === dataSlider.length){
             setSlideIndex(1)
         }
+
+        
     }
+    window.onload=nextSlide;
 
     const prevSlide = () => {
         if(slideIndex !== 1){
@@ -36,6 +45,7 @@ export default function Slider() {
         <div className="container-slider">
             {dataSlider.map((obj, index) => {
                 return (
+                    
                     <div
                     key={obj.id}
                     className={slideIndex === index + 1 ? "slidee active-anim" : "slidee"}

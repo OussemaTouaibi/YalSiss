@@ -7,37 +7,46 @@ import MetaData from '../../../userInterface/components/shared/metaData'
 import { useAlert } from 'react-alert'
 import { useDispatch, useSelector } from 'react-redux'
 import { updateProduct, getProductDetails, clearErrors } from '../../../actions/productActions'
+import { allCategories, getCategorySubs } from '../../../actions/categoryActions'
 import { UPDATE_PRODUCT_RESET } from '../../../constants/productConstants'
 import './productList.scss'
 
+import { Select } from "antd";
+const { Option } = Select;
+
 const UpdateProduct = ({ match, history }) => {
+
+
+    const { categories } = useSelector(state => state.allCategories);
 
     const [name, setName] = useState('');
     const [price, setPrice] = useState(0);
     const [description, setDescription] = useState('');
     const [category, setCategory] = useState('');
+    const [categoriess, setCategoriess] = useState([]);
+
     const [stock, setStock] = useState(0);
     const [seller, setSeller] = useState('');
-    const [images, setImages] = useState([]);
-
     const [oldImages, setOldImages] = useState([]);
-    const [imagesPreview, setImagesPreview] = useState([])
+    const [images, setImages] = useState([]);
+    const [imagesPreview, setImagesPreview] = useState([]);
 
-    const categories = [
-        'Electronics',
-        'Cameras',
-        'Laptops',
-        'Accessories',
-        'Headphones',
-        'Food',
-        "Books",
-        'Clothes/Shoes',
-        'Beauty/Health',
-        'Sports',
-        'Outdoor',
-        'Home'
-    ]
+    const initialState = {
+        colors: ["Black", "Brown" ,"White", "Blue", "red", "pink", "yellow"],
+        size: ["S", "M" ,"L", "XL", "XXL", "XXXL", "36","37","38","39","40","41","42","43","44","45"],
+        sub: [],   
+      };
+      
+    const [values, setValues] = useState(initialState);
+        const {
+           colors,
+           size, 
+           sub
+        } = values; 
+  
 
+
+   
     const alert = useAlert();
     const dispatch = useDispatch();
 
@@ -47,7 +56,7 @@ const UpdateProduct = ({ match, history }) => {
     const productId = match.params.id;
 
     useEffect(() => {
-
+        dispatch(allCategories());
         if (product && product._id !== productId) {
             dispatch(getProductDetails(productId));
         } else {
@@ -56,8 +65,11 @@ const UpdateProduct = ({ match, history }) => {
             setDescription(product.description);
             setCategory(product.category);
             setSeller(product.seller);
-            setStock(product.stock)
-            setOldImages(product.images)
+            setStock(product.stock);
+            setOldImages(product.images);
+           setValues({ ...values, size  });
+           setValues({ ...values, colors  });
+           setValues({ ...values, sub  });
         }
 
         if (error) {
@@ -88,6 +100,7 @@ const UpdateProduct = ({ match, history }) => {
         formData.set('price', price);
         formData.set('description', description);
         formData.set('category', category);
+        formData.set('values', values);
         formData.set('stock', stock);
         formData.set('seller', seller);
 
@@ -120,6 +133,25 @@ const UpdateProduct = ({ match, history }) => {
         })
     }
 
+
+    const [subOptions, setSubOptions] = useState([]);
+
+    const [showSub, setShowSub] = useState(false);
+
+    const handleCategoryChange = (e) => {
+        
+        e.preventDefault();
+        console.log('CLICKED CATEGORY', e.target.value);
+        setCategoriess({sub:[], category: e.target.value });
+        setCategory(e.target.value);
+        getCategorySubs(e.target.value).then(res => {
+            setSubOptions(res.data);
+            
+            console.log('SUBS OPTIONS ON  CATEGORY CLICK ', res);
+        });
+        setShowSub(true);
+
+    }
 
     return (
         <Layout>
@@ -164,16 +196,85 @@ const UpdateProduct = ({ match, history }) => {
                                     <label htmlFor="description_field">Description</label>
                                     <textarea className="form-control" id="description_field" rows="8" value={description} onChange={(e) => setDescription(e.target.value)}></textarea>
                                 </div>
+                                <div>
+                             <label> Colors </label>
+                        <Select
+                        mode="multiple"
+                        style={{width: '100%'}}
+                        placeholder="Please select"
+                        value={colors}
+                        onChange={(value) => setValues({ ...values, colors : value })}
+                        >
+                            {
+                            
+                            colors.map((r) => (<Option key={r} value={r}>{r}</Option> ))
+                            
+                            };
+                        
+                                   </Select>
+                             </div> 
+                       
 
-                                <div className="form-group">
+
+                         <div >
+                             <label> Size </label>
+                        <Select
+                        mode="multiple"
+                        style={{width: '100%'}}
+                        placeholder="Please select"
+                        value={size}
+                        onChange={(value) => setValues({ ...values, size : value })}
+                        >
+                            {
+                            
+                            size.map((b) => (<Option key={b} value={b}>{b}</Option> ))
+                            
+                            };
+                        
+                                   </Select>
+                             </div> 
+                             <div className="form-group">
                                     <label htmlFor="category_field">Category</label>
-                                    <select className="form-control" id="category_field" value={category} onChange={(e) => setCategory(e.target.value)}>
-                                        {categories.map(category => (
-                                            <option key={category} value={category} >{category}</option>
-                                        ))}
-
-                                    </select>
+                                    <select
+              name="category"
+              className="form-control"
+              onChange={handleCategoryChange}
+              suboption={subOptions}
+              showSub={showSub}
+            >
+              <option>Please select</option>
+              {categories.length > 0 &&
+                categories.map((e) => (
+                  <option key={e._id} value={e._id}>
+                    {e.name}
+                  </option>
+                ))}
+           
+            </select>
+           
                                 </div>
+
+
+
+                             
+                           { showSub && ( <div >
+                             <label> Sub Category</label>
+                        <Select
+                        mode="multiple"
+                        style={{width: '100%'}}
+                        placeholder="Please select"
+                        value={sub}
+                        onChange={(value) => setValues({ ...values, sub : value })}
+                        >
+                            {subOptions.length &&
+                            
+                            subOptions.map((s) => (<Option key={s._id} value={s._id}>{s.name}</Option> ))
+                            
+                            };
+                        
+                                   </Select>
+                             </div> )}
+
                                 <div className="form-group">
                                     <label htmlFor="stock_field">Stock</label>
                                     <input

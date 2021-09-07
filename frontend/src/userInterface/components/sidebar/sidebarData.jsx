@@ -16,22 +16,22 @@ export const SidebarData = [
     subNav: [
       {
         title: 'Hommes',
-        path: '/Homme',
+        path: '/category/vetements-homme',
         icon: <IoIcons.IoIosMan />
       },
       {
         title: 'Femmes',
-        path: '/',
+        path: '/category/vetements-femme',
         icon: <IoIcons.IoIosWoman />
       },
       {
         title: 'Enfants',
-        path: '/',
+        path: '/category/vetements-enfant',
         icon: <FaIcons.FaChild />
       },
       {
         title: 'Accesoires',
-        path: '/overview/revenue',
+        path: '/category/accesoires',
         icon: <FaIcons.FaShoppingBag />
       }
     ]
@@ -46,7 +46,7 @@ export const SidebarData = [
     subNav: [
       {
         title: 'téléphones & Tablettes',
-        path: '/',
+        path: '/category/telephones-and-tablettes',
         icon: <FaIcons.FaTabletAlt />,
         cName: 'sub-nav'
       },
@@ -74,12 +74,12 @@ export const SidebarData = [
     subNav: [
       {
         title: 'Meubles',
-        path: '/',
+        path: '/category/meubles',
         icon: <GIIcons.GiDesk />
       },
       {
         title: 'Décoration',
-        path: '/',
+        path: '/category/decoration',
         icon: <GIIcons.GiColumnVase />
       }
     ]
@@ -95,12 +95,12 @@ export const SidebarData = [
     subNav: [
       {
         title: 'Parfums',
-        path: '/',
+        path: '/category/parfums',
         icon: <GIIcons.GiPerfumeBottle />
       },
       {
         title: 'Maquillage',
-        path: '/',
+        path: '/category/maquillages',
         icon: <GIIcons.GiLipstick />
       }
     ]

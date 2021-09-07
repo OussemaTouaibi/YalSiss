@@ -18,6 +18,17 @@ const productSchema = new mongoose.Schema({
         type: String,
         required: [true, 'Please enter product description'],
     },
+    colors: [{
+        type: String,
+        required: [true, 'Please enter product colors'],
+      },
+    ],
+      sizes: [{
+        type: String,
+        required: [true, 'Please enter product size'],
+
+      },
+    ],
     ratings: {
         type: Number,
         default: 0
@@ -35,28 +46,19 @@ const productSchema = new mongoose.Schema({
         }
     ],
     category: {
-        type: String,
-        required: [true, 'Please select category for this product'],
-        enum: {
-            values: [
-                'Electronics',
-                'Cameras',
-                'Laptops',
-                'Accessories',
-                'Headphones',
-                'Food',
-                "Books",
-                'Clothes/Shoes',
-                'Beauty/Health',
-                'Sports',
-                'Outdoor',
-                'Home'
-            ],
-            message: 'Please select correct category for product'
-        }
-
+        type: ObjectId,
+        required: [true, 'Please enter product category'],
+        ref: "Category",
+        //required
     },
 
+
+    subs: 
+ 
+     {
+        type: String,
+        ref: "Sub",
+    },
     seller: {
         type: String,
         required: [true, 'Please enter product seller']

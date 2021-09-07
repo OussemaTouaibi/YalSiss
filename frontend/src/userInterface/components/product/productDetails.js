@@ -13,6 +13,7 @@ import { NEW_REVIEW_RESET } from '../../../constants/productConstants'
 
 
 
+
 import './productDetails.scss'
 import Layout from '../shared/layout'
 
@@ -20,8 +21,12 @@ import Layout from '../shared/layout'
 
 const ProductDetails = ({ match }) => {
 
+ 
+       
+
     const [quantity, setQuantity] = useState(1)
     const [rating, setRating] = useState(0);
+
     const [comment, setComment] = useState('');
 
 
@@ -55,6 +60,8 @@ const ProductDetails = ({ match }) => {
 
     const addToCart = () => {
         dispatch(addItemToCart(match.params.id, quantity));
+
+
         alert.success('Item Added to Cart')
     }
     
@@ -130,7 +137,6 @@ const ProductDetails = ({ match }) => {
     return (
         
         <Layout>
-           
      {loading ? <Loader /> : (
             <Fragment>
                  <MetaData title={product.name} />
@@ -172,6 +178,15 @@ const ProductDetails = ({ match }) => {
         
                     <hr />
         
+
+
+
+
+
+
+
+
+
         
                     <p>Status: <span id="stock_status" className={product.stock > 0 ? 'greenColor' : 'redColor'}>{product.stock > 0 ? 'In Stock' : 'Out of Stock'}</span></p>
         

@@ -10,7 +10,9 @@ const {
 	list,
 	read,
 	update,
-	remove
+	remove,
+	getSubs,
+	getProductsByCategory
 
 } = require("../controllers/categoryController");
 
@@ -20,6 +22,9 @@ router.route('/categories').get(isAuthenticatedUser, authorizeRoles('admin'), li
 router.route('/category/:slug').get(isAuthenticatedUser, authorizeRoles('admin'), read);
 router.route('/category/:slug').put(isAuthenticatedUser, authorizeRoles('admin'), update);
 router.route('/category/:id').delete(isAuthenticatedUser, authorizeRoles('admin'), remove);
+router.route('/category/subs/:_id').get(isAuthenticatedUser, authorizeRoles('admin'), getSubs);
+router.route('/categorry/:slug').get(getProductsByCategory);
+
 
 
 

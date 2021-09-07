@@ -1,4 +1,6 @@
 const Category = require("../models/category");
+const Sub = require("../models/sub")
+const Product = require("../models/product")
 const slugify = require('slugify');
 
 
@@ -39,9 +41,14 @@ exports.read = catchAsyncErrors(async (req, res, next) => {
 
   let category = await Category.findOne({slug: req.params.slug}).exec();
   
+  const products = await Product.find({ category })
+  .populate("category")
+  .populate("_id name")
+  .exec();
   res.status(200).json({
     success: true,
-    category
+    category,
+    products,
 })
 });
 
@@ -80,3 +87,24 @@ exports.remove = catchAsyncErrors(async (req, res, next) => {
     })
 
 });
+
+
+
+
+  exports.getSubs = catchAsyncErrors(async (req, res, next) => {
+    Sub.find({ parent: req.params._id }).exec((err, subs) => {
+      if (err) console.log(err);
+      res.json(subs);
+    })
+});
+
+
+exports.getProductsByCategory = catchAsyncErrors(async (req, res, next) => {
+
+    let products = await Product.findOne({slug: req.params.slug}).exec();
+    
+    res.status(200).json({
+      success: true,
+      products
+  })
+  });

@@ -8,6 +8,11 @@ import {
     ONE_CATEGORYS_SUCCESS,
     ONE_CATEGORYS_FAIL,
 
+    DISPLAY_CATEGORYSUBS_REQUEST,
+    DISPLAY_CATEGORYSUBS_SUCCESS,
+    DISPLAY_CATEGORYSUBS_RESET,
+    DISPLAY_CATEGORYSUBS_FAIL,
+
     DELETE_CATEGORY_REQUEST,
     DELETE_CATEGORY_SUCCESS,
     DELETE_CATEGORY_RESET,
@@ -150,5 +155,37 @@ export const categoryReducer = (state = {}, action) => {
 
         default:
             return state;
+    }
+}
+
+export const getCategorySubsReducer = (state = { subs: {} }, action) => {
+    switch (action.type) {
+
+        case DISPLAY_CATEGORYSUBS_REQUEST:
+            return {
+                ...state,
+                loading: true
+            }
+
+        case DISPLAY_CATEGORYSUBS_SUCCESS:
+            return {
+                loading: false,
+                product: action.payload
+            }
+
+        case DISPLAY_CATEGORYSUBS_FAIL:
+            return {
+                ...state,
+                error: action.payload
+            }
+
+        case CLEAR_ERRORS:
+            return {
+                ...state,
+                error: null
+            }
+
+        default:
+            return state
     }
 }

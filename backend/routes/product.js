@@ -11,7 +11,10 @@ const {
     deleteProduct,
     createProductReview,
     getProductReviews,
-    deleteReview
+    deleteReview,
+    getColors,
+    list
+    
      } = require('../controllers/productController')
 
 
@@ -20,6 +23,8 @@ const {
 
      router.route('/products').get(getProducts);
      router.route('/admin/products').get(getAdminProducts);
+    
+
      router.route('/product/:id').get(getSingleProduct);
      
      router.route('/admin/product/new').post(isAuthenticatedUser, authorizeRoles('admin'), newProduct);
@@ -32,5 +37,12 @@ const {
      router.route('/review').put(isAuthenticatedUser, createProductReview)
      router.route('/reviews').get(isAuthenticatedUser, getProductReviews)
      router.route('/reviews').delete(isAuthenticatedUser, deleteReview)
+
+     router.route(`/api/v1/category/colors`).get(getColors);
+
+     router.route('/category/:slug').get(list);
+
+
+
      
      module.exports = router;

@@ -1,5 +1,5 @@
 import React from 'react'
-import Layout from '../../userInterface/components/shared/layout'
+import Layout from '../components/shared/layout'
 import {Col, Container, Row} from 'reactstrap'
 import aboutImg  from '../../assets/t-shirt.png'
 import './aboutUs.scss'

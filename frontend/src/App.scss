@@ -12,6 +12,7 @@ body {
 @import '../node_modules/bulma/sass/elements/button.sass';
 @import '../node_modules/bulma/sass/elements/container.sass';
 @import '../node_modules/bulma/sass/layout/hero.sass';
+@import 'antd/dist/antd.css'; 
 
 .app {
     position: relative;
@@ -317,4 +318,8 @@ form {
     .slick-prev{
         left:-55px;
     }
+}
+
+.ya{
+    margin-bottom: 2rem;
 }

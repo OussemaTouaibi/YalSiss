@@ -19,7 +19,7 @@ const Homepage = () => {
             
             <ImageSlider />
   
-            
+      
         </Layout>
     )
 }
