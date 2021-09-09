@@ -12,6 +12,8 @@ import { useAlert } from 'react-alert'
 
 import { getProducts } from '../../actions/productActions'
 
+import CardFooter from '../components/footer/cardfooter';
+
 import './home-page2.scss'
 
 const { createSliderWithTooltip } = Slider;
@@ -24,6 +26,7 @@ const Homepage2 = ({ match }) => {
   const [category, setCategory] = useState('')
   const [rating, setRating] = useState(0)
 
+  const { user, isAuthenticated, Loading } =  useSelector(state =>state.auth)
 
   const categories = [
     'vetement-homme',
@@ -205,7 +208,9 @@ const Homepage2 = ({ match }) => {
               </Fragment>
 
           )}
-         
+ {!Loading && (!isAuthenticated || user.role !== 'admin') && (
+          <CardFooter />
+          )}
         </Layout>
         
     )

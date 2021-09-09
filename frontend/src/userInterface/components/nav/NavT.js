@@ -27,39 +27,39 @@ const  NavT= (props) => {
                
 
                 <ul className="main-menuz menuz">
-                <li className="current-menuz-item menuz-item-has-children" onClick={handleSelect}><a href="#" title={'Apple'}>Apple</a>
+                <li className="current-menuz-item menuz-item-has-children" onClick={handleSelect}><a href="" title={'Apple'}>Apple</a>
                 </li>
                 </ul>
 
                 <ul className="main-menuz menuz">
-                <li className="current-menuz-item menuz-item-has-children" onClick={handleSelect}><a href="#" title={'Samsung'}>Samsung </a>
+                <li className="current-menuz-item menuz-item-has-children" onClick={handleSelect}><a href="" title={'Samsung'}>Samsung </a>
                 </li>
                 </ul>
             
              
                 <ul className="main-menuz menuz">
-                <li className="current-menuz-item menuz-item-has-children" onClick={handleSelect}><a href="#" title={'Huawei'}>Huawei</a>
+                <li className="current-menuz-item menuz-item-has-children" onClick={handleSelect}><a href="" title={'Huawei'}>Huawei</a>
                 </li>
                 </ul>
 
               
                 <ul className="main-menuz menuz">
-                <li className="current-menuz-item menuz-item-has-children" onClick={handleSelect}><a href="#" title={'Xiaomi'}>Xiaomi</a>
+                <li className="current-menuz-item menuz-item-has-children" onClick={handleSelect}><a href="" title={'Xiaomi'}>Xiaomi</a>
                 </li>
                 </ul>
 
                 <ul className="main-menuz menuz">
-                <li className="current-menuz-item menuz-item-has-children" onClick={handleSelect}><a href="#" title={'Evertek'}>Evertek</a>
+                <li className="current-menuz-item menuz-item-has-children" onClick={handleSelect}><a href="" title={'Evertek'}>Evertek</a>
                 </li>
                 </ul>
              
                 <ul className="main-menuz menuz">
-                <li className="current-menuz-item menuz-item-has-children" onClick={handleSelect} ><a href="#" title={'Infinix'}>Infinix </a>
+                <li className="current-menuz-item menuz-item-has-children" onClick={handleSelect} ><a href="" title={'Infinix'}>Infinix </a>
                 </li>
                 </ul>
                 
                 <ul className="main-menuz menuz">
-                <li className="current-menuz-item menuz-item-has-children" onClick={handleSelect}><a href="#" title={'Nokia'}>Nokia</a>
+                <li className="current-menuz-item menuz-item-has-children" onClick={handleSelect}><a href="" title={'Nokia'}>Nokia</a>
                 </li>
                 </ul>
              

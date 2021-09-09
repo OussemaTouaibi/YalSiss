@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useAlert } from 'react-alert'
 
 import { getAdminProducts } from '../../../actions/productActions'
-
+import Wo from '../../../assets/w.jpg'
 
 import './homme.scss'
 import NavF from '../../components/nav/NavF';
@@ -88,8 +88,29 @@ const handleSelect = (sub) => {
 
     return (
         <Layout>
+
+
             <NavF onSubSelect={handleSelect} />
            
+
+            <div className="banner-area pt-100 pb-100">
+            <div className="container">
+                <div className="bg-img pt-100 pb-100 learn-banner" style={{backgroundImage: `url(${Wo})`}} >
+                    <div className="row">
+                        <div className="col-lg-10 col-md-10 col-sm-11">
+                            <div classNa="banner-content">
+                                <h2>Premium Home <br/>Decorator</h2>
+                                   <h2></h2>
+                                   <h2></h2>
+                                   <h2></h2>
+                                   <h2></h2>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
            
     
    <div className="main_content">

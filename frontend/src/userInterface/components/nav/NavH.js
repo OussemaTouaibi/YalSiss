@@ -48,7 +48,7 @@ props.onSubSelect(sub)
                 </li>
                
                 <ul className="main-menuz menuz">
-                <li className="current-menuz-item menuz-item-has-children" onClick={handleSelect} ><a href="#"  title={'Shorts'} >Shorts</a>
+                <li className="current-menuz-item menuz-item-has-children" onClick={handleSelect} ><a href=""  title={'Shorts'} >Shorts</a>
                 </li>
                </ul>
                <ul className="main-menuz menuz">

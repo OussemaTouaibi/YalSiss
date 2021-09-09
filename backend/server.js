@@ -4,6 +4,26 @@ const dotenv = require('dotenv')
 const cloudinary = require('cloudinary');
 
 
+//Security API
+
+const sanitize = require('express-mongo-sanitize');
+const helmet = require("helmet");
+const xss = require("xss-clean");
+
+
+
+
+
+
+app.use(sanitize());
+app.use(helmet());
+app.use(xss());
+
+
+
+
+
+
 // Handle Uncaught exceptions
 process.on('uncaughtException', err => {
     console.log(`ERROR: ${err.stack}`);

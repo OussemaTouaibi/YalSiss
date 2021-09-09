@@ -3,15 +3,22 @@ import Layout from '../components/shared/layout'
 
 import './ContactPage.scss'
 import emailjs from 'emailjs-com';
+
+import { useSelector } from 'react-redux'
+
+import CardFooter from '../components/footer/cardfooter';
     
 
 
-const Result =() => {
+const Result = () => {
+
     return(
         <p>Your message has been successfully sent. We will contact you soon</p>
     )
 }
 const ContactPage = () => {
+
+  const { user, isAuthenticated, Loading } =  useSelector(state =>state.auth);
 
  const [result, showResult] = useState(false);
 
@@ -52,7 +59,10 @@ const ContactPage = () => {
       </div>
       </div>
       </div>
-  
+
+      {!Loading && (!isAuthenticated || user.role !== 'admin') && (
+              <CardFooter />
+              )}
         </Layout>
 
     )

@@ -20,32 +20,32 @@ const  NavD = (props) => {
         <div className="ps-container">
 
                       <nav className="navigation">
-        <div className="ps-container"><a className="ps-logo" href="index.html"><img src="images/logo.png" alt=""/></a>
+ 
               <ul className="main-menuz menuz">
                
 
                 <ul className="main-menuz menuz">
-                <li className="current-menuz-item menuz-item-has-children" onClick={handleSelect} ><a href="#" title={'Mirrors'} >Mirrors</a>
+                <li className="current-menuz-item menuz-item-has-children" onClick={handleSelect} ><a href="" title={'Mirrors'} >Mirrors</a>
                 </li>
                 </ul>
 
                 <ul className="main-menuz menuz">
-                <li className="current-menuz-item menuz-item-has-children" onClick={handleSelect} ><a href="#" title={'Vase'}>Vase</a>
+                <li className="current-menuz-item menuz-item-has-children" onClick={handleSelect} ><a href="" title={'Vase'}>Vase</a>
                 </li>
                 </ul>
              
                 <ul className="main-menuz menuz">
-                <li className="current-menuz-item menuz-item-has-children" onClick={handleSelect} ><a href="#" title={'Clock'}>Clock</a>
+                <li className="current-menuz-item menuz-item-has-children" onClick={handleSelect} ><a href="" title={'Clock'}>Clock</a>
                 </li>
                 </ul>
 
                 <ul className="main-menuz menuz">
-                <li className="current-menuz-item menuz-item-has-children" onClick={handleSelect}><a href="#" title={'Wall hangings'} >Wall hangings</a>
+                <li className="current-menuz-item menuz-item-has-children" onClick={handleSelect}><a href="" title={'Wall hangings'} >Wall hangings</a>
                 </li>
                 </ul>
 
                 <ul className="main-menuz menuz">
-                <li className="current-menuz-item menuz-item-has-children" onClick={handleSelect}><a href="#" title={'Wallpapers'}>Wallpapers</a>
+                <li className="current-menuz-item menuz-item-has-children" onClick={handleSelect}><a href="" title={'Wallpapers'}>Wallpapers</a>
                 </li>
                 </ul>
 
@@ -61,7 +61,7 @@ const  NavD = (props) => {
 
 
 
- </div>
+
     </nav>
     </div>
     </div>

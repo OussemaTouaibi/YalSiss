@@ -26,27 +26,27 @@ const  NavM= (props) => {
                
 
                 <ul className="main-menuz menuz">
-                <li className="current-menuz-item menuz-item-has-children" onClick={handleSelect} ><a href="#" title={'Living Room'}>Living Room</a>
+                <li className="current-menuz-item menuz-item-has-children" onClick={handleSelect} ><a href="" title={'Living Room'}>Living Room</a>
                 </li>
                 </ul>
 
                 <ul className="main-menuz menuz">
-                <li className="current-menuz-item menuz-item-has-children" onClick={handleSelect} ><a href="#" title={'Bedroom'}>Bedroom </a>
+                <li className="current-menuz-item menuz-item-has-children" onClick={handleSelect} ><a href="" title={'Bedroom'}>Bedroom </a>
                 </li>
                 </ul>
              
                 <ul className="main-menuz menuz">
-                <li className="current-menuz-item menuz-item-has-children" onClick={handleSelect} ><a href="#" title={'Kitchen'}>Kitchen</a>
+                <li className="current-menuz-item menuz-item-has-children" onClick={handleSelect} ><a href="" title={'Kitchen'}>Kitchen</a>
                 </li>
                 </ul>
 
                 <ul className="main-menuz menuz">
-                <li className="current-menuz-item menuz-item-has-children" onClick={handleSelect} ><a href="#" title={'Bathroom'}>Bathroom</a>
+                <li className="current-menuz-item menuz-item-has-children" onClick={handleSelect} ><a href="" title={'Bathroom'}>Bathroom</a>
                 </li>
                 </ul>
 
                 <ul className="main-menuz menuz">
-                <li className="current-menuz-item menuz-item-has-children" onClick={handleSelect} ><a href="#" title={'Dining Room'}>Dining Room </a>
+                <li className="current-menuz-item menuz-item-has-children" onClick={handleSelect} ><a href="" title={'Dining Room'}>Dining Room </a>
                 </li>
                 </ul>
 

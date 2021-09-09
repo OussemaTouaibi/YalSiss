@@ -101,3 +101,22 @@
   }
 
  
+  @media only screen and (max-width: 767px) {
+    .banner-area.pb-75 {
+      padding-bottom: 20px;
+    }
+    .banner-area.pt-50 {
+      padding-top: 20px;
+    }
+    .banner-area.pb-40 {
+      padding-bottom: 20px;
+    }
+  }
+
+  .bg-img {
+    background-position: center center;
+    background-size: cover;
+  }
+  .banner-content {
+    text-align: right;
+  }

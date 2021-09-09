@@ -71,7 +71,7 @@ const  NavF = (props) => {
                 </ul>
 
                 <ul className="main-menuz menuz">
-                <li className="current-menuz-item menuz-item-has-children"><a href="#" title={'Skirt'}>Skirt</a>
+                <li className="current-menuz-item menuz-item-has-children" onClick={handleSelect} ><a href="#" title={'Skirt'}>Skirt</a>
                 </li>
                 </ul>
                 </ul>

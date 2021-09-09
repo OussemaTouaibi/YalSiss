@@ -46,13 +46,15 @@ const SidebarNav = styled.nav`
   height: 100vh;
   display: flex;
   justify-content: center;
-  position: fixed;
-  top: 20;
+  position: absolute;        top: 20;
   left: ${({ sidebar }) => (sidebar ? '0' : '-100%')};
   transition: 350ms;
   z-index: 10;
   
-  @media (max-width : 960px) {}
+  (min-width: 320px) and (max-width: 479px)  {
+
+    
+  }
   
 `;
 
